@@ -1,0 +1,18 @@
+/* miniprogram/pages/address.wxss */
+page{
+  background: #f6f6f6;
+}
+.h1{
+  padding: .12rem;
+  color:#999;
+  font-size: 24rpx;
+  margin-left: 12rpx;
+  line-height: 2;
+}
+
+.custom-class-1{
+  padding: .12rem;
+}
+.btn button{
+    width: 100%;
+}

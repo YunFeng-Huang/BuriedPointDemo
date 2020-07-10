@@ -1,0 +1,22 @@
+<!-- 这是自定义组件的内部WXML结构 -->
+<view class="inner">
+  <view wx:for="{{innerItem}}" class='inner-flex'>
+    <view class="section__ctn">
+      <image class='inner-image' mode="scaleToFill" src="{{item.icon}}"></image>
+    </view>
+    <view class='text-warp'>
+      <view>
+        <view class='title' style="text-align:center">{{item.name}}</view>
+        <!-- <view class='active'>
+        <image class='icon' mode="scaleToFill" src="{{icon1}}"></image>
+       🈵️ 58减5</view>
+        <view class='reduce'>
+        <image class='icon' mode="scaleToFill" src="{{icon2}}"></image>
+        限时促销</view> -->
+      </view>
+      <view class='price' style="text-align:center">¥{{item.price}} <text class='oldprice'>¥{{item.price * 2}} </text></view>
+      <view  style="text-align:center;font-size:22rpx;color:#999">预计3天</view>
+    </view>
+  </view>
+</view>
+<slot></slot>

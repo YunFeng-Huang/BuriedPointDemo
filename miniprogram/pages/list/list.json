@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "component-tag-name": "/template/food/food"
+  },
+  "navigationBarTitleText": "专洗"
+}

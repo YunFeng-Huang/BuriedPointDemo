@@ -1,0 +1,19 @@
+<van-radio-group value="{{ radio }}" bind:change="onChange">
+	<view style="padding: 20rpx;">
+		<view class="wrap" style="border-bottom:1px solid #d1d1d1">
+			<van-radio name="1">
+				<view class="flex">
+					<view class="l">
+						<view>名字<text>17742007514</text></view>
+						<view style="font-size:32rpx">FSDAFSADFDSFSED</view>
+					</view>
+				</view>
+			</van-radio>
+			<view class="r">
+				<van-icon name="records" />
+			</view>
+		</view>
+		<view>
+		</view>
+	</view>
+</van-radio-group>

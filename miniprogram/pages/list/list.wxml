@@ -1,0 +1,20 @@
+
+<view class="w-container">
+  <view class="tab">
+    <scroll-view scroll-x="true" class="scroll-view">
+      <view wx:for="{{scrollXList}}" class="scroll-view-item_H {{scrollXActive == index ? 'active' : ''}}">
+        <view data-index="{{index}}" bindtap="cateClick">
+          <text class='scroll-view-text'>{{item.name}}</text>
+        </view>
+      </view>
+      <view class='scroll-view-active' style="left:{{scrollXActive*240}}rpx"></view>
+    </scroll-view>
+  </view>
+   <scroll-view scroll-y="true" class="scroll-view-main">
+        <component-tag-name inner-item="{{scrollItem.foods}}"></component-tag-name>
+        <view class="bottom">
+          <text>立即预约</text>
+        </view>
+        <view class="bottom2"></view>
+    </scroll-view>
+</view>

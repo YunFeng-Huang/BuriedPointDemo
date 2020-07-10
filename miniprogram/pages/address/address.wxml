@@ -1,0 +1,17 @@
+<van-cell-group custom-class="custom-class-1">
+	<text class="h1">联系人</text>
+	<van-field value="{{ form.username }}" clearable label="用户名" placeholder="请输入用户名" input-align="right" bind:change="onChange" />
+	<van-cell title="称呼">
+		<van-radio-group value="{{ form.type }}" bind:change="onChange1" style="display:flex;">
+			<van-radio name="1" style="margin-right:40rpx">先生</van-radio>
+			<van-radio name="2">女生</van-radio>
+		</van-radio-group>
+	</van-cell>
+	<van-field value="{{ form.phone }}" label="手机号码" bind:change="onChangePhone" placeholder="请输入手机号" input-align="right" />
+	<text class="h1">联系地址</text>
+  <van-cell title="详细地址" is-link value="{{ addr }}" bind:click="getLocation"/>
+	<van-field value="{{ form.des }}" label="备注" type="textarea" bind:change="onChangeDes" placeholder="请输入备注" input-align="right" />
+</van-cell-group>
+<view style="margin-top:20rpx;margin-left:10%;width:80%;text-align:center" class="btn">
+  <van-button type="primary" size="normal" bindtap="save" >保存</van-button>
+</view>
