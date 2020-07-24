@@ -1,9 +1,8 @@
 //index.js
 const app = getApp()
-import reset from '../../tracks/reset';
-Page = reset(Page,'pages/list/list')
+import reset from '../../tracks/resetApp';
 
-Page({
+reset(Page,'pages/list/list')({
   data: {
     avatarUrl: './user-unlogin.png',
     userInfo: {},
@@ -167,5 +166,24 @@ Page({
   },
   _submit(){
     app.xbossdebug.error('_submit，请求出错啦')
-  }
+    console.log(app.history_router,'222')
+    wx.navigateTo({
+      url: '/pages/address/address',
+      events: {
+      // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
+      acceptDataFromOpenedPage: function(data) {
+      console.log(data)
+      }}
+    })
+  },
+  _OpenList(){
+    wx.navigateTo({
+      url: '/pages/list/list',
+      events: {
+      // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
+      acceptDataFromOpenedPage: function(data) {
+      console.log(data)
+      }}
+    })
+  },
 })

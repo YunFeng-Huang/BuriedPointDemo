@@ -4,7 +4,7 @@ import trackConfig from './tracks/index';
 
 new Tracker({ tracks: trackConfig });
 
-import reset from './tracks/reset';
+import reset from './tracks/resetApp';
 
 App = reset(App)
 
@@ -19,9 +19,7 @@ xbossdebug.config.setLocation = true; // 获取用户位置信息
 
 //App使用拦截器示例
 App({
-  data:{
-    history_router:[],
-  },
+  history_router:[],
   xbossdebug,
   onLaunch(options) {
     // Do something initial when launch.
@@ -37,9 +35,10 @@ App({
     // Do something when show.
   },
   onHide() {
-    console.log(getCurrentPages(),'getCurrentPages()')
+    console.log(this.history_router,'app.data.history_router')
     // Do something when hide.
   },
+  
   onError(msg) {
     console.log(msg)
   },

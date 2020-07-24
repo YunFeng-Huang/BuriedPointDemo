@@ -1,8 +1,8 @@
 //index.js
 const app = getApp()
 // var Food = require('../../template/food/food.js');
-
-Page({
+import reset from '../../tracks/resetApp';
+reset(Page,'pages/index/index')({
   data: {
     avatarUrl: './user-unlogin.png',
     userInfo: {},
@@ -174,7 +174,7 @@ Page({
   },
   _appointment(){
     console.log(getCurrentPages(),'getCurrentPages()')
-    console.log(app.data.history_router)
+    console.log(app.history_router)
     // wx.cloud.callFunction({
     //   name: 'getVisitPage',
     //   data: {},

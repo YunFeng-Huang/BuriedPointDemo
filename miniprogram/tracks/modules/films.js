@@ -32,6 +32,9 @@ const tracks = {
     onLoad(){
       console.log('onload',12312312312)
     },
+    onShow(){
+      console.log('show')
+    },
   }
 };
 

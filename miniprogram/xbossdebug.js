@@ -353,7 +353,8 @@
     // 劫持原小程序App方法
 
 
-    createClass(XbossDebug, [{
+    createClass(XbossDebug, [
+      {
       key: 'rewriteApp',
       value: function rewriteApp() {
         var originApp = App;
@@ -389,7 +390,8 @@
 
       // 劫持原小程序Page方法
 
-    }, {
+    }, 
+    {
       key: 'rewritePage',
       value: function rewritePage() {
         var _this2 = this;
@@ -409,7 +411,8 @@
 
       // 获取当前显示的页面
 
-    }, {
+    }, 
+    {
       key: 'getActivePage',
       value: function getActivePage() {
         var curPages = getCurrentPages();
@@ -421,7 +424,8 @@
 
       // 记录函数执行情况，最多记录20个
 
-    }, {
+    }, 
+    {
       key: 'pushToBreadcrumb',
       value: function pushToBreadcrumb(obj) {
         this.breadcrumbs.push(obj);
@@ -430,7 +434,8 @@
 
       // 记录Page执行信息
 
-    }, {
+    }, 
+    {
       key: 'recordPageFn',
       value: function recordPageFn(page, methodName) {
         var userDefinedMethod = page[methodName];

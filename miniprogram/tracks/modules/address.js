@@ -1,5 +1,5 @@
 const tracks = {
-  path: 'pages/index/index',
+  path: 'pages/address/address',
   elementTracks: [
     {
       element: '.appointment',
@@ -23,9 +23,12 @@ const tracks = {
     },
   ],
   methods:{
-    onLoad(){
-      console.log('onLoadindex')
+    onShow(){
+      console.log('show1pages/address/address')
     },
+    onHide(){
+      console.log('onHidepages/address/address')
+    }
   }
 };
 

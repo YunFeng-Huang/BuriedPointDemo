@@ -1,5 +1,6 @@
 // miniprogram/pages/address.js
-Page({
+import reset from '../../tracks/resetApp';
+reset(Page,'pages/address/address')({
 
   /**
    * 页面的初始数据
