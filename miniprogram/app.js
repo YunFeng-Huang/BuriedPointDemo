@@ -7,58 +7,22 @@ new Tracker({ tracks: trackConfig });
 import reset from './tracks/reset';
 
 App = reset(App)
-// var appFilter = function(config){
-//   if(config.onLaunch){
-//     let _onLaunch = config.onLaunch;
-//     config.onLaunch = function(ops){
-//       console.log(ops,'ops1111')
-//          //在这里干埋点的事
-//         //例如存储数据、上送数据
-//          _onLaunch.call(this);//调用原来的执行逻辑
-//     }
-//   }
-//   return config;
-// }
- 
-// //先把原生的三个对象保存起来
-// const originalApp = App,
-//       originalPage = Page,
-//       originalComponent = Component;
-// //在原生的事件函数里面，添加数据埋点，并替换成新的事件函数
-// const _extendsApp = function (conf, method) {
-//   const _o_method = conf[method];
-//   conf[method] = function (ops) {
-//     //在此处进行数据埋点
-//     console.log(ops,'method',method)
-//     if (typeof _o_method === 'function') {
-//       _o_method.call(this, ops);
-//     }
-//   }
-// }
 
- 
-// //重新定义App这个对象，将原来的App对象覆盖
-// App = function(conf){
-//   //定义需要增强的方法
-//   const methods = ['onLaunch', 'onShow', 'onHide', 'onError']
- 
-//   methods.map(function (method) {
-//     _extendsApp(conf, method);
-//   })
-//   //另外增强扩展埋点上送的方法
-//   conf.william = {
-//     addActionData: function (ops) {
-//       console.log('addActionData');
-//     },
-//     addVisitLog: function (ops) {
-//       console.log('addVisitLog');
-//     }
-//   }
-//   return originalApp(conf);
-// }
+
+var xbossdebug = require('./xbossdebug.js') // 引用xbossdebug
+xbossdebug.config.key = 'maizuo' // key为自定义唯一值，用于后端记录时区分应用
+xbossdebug.config.url = 'https://easy-mock.com/'; // 上报服务端地址
+// 可选参数
+xbossdebug.config.setSystemInfo = true; // 获取系统信息
+xbossdebug.config.setLocation = true; // 获取用户位置信息
+
 
 //App使用拦截器示例
 App({
+  data:{
+    history_router:[],
+  },
+  xbossdebug,
   onLaunch(options) {
     // Do something initial when launch.
         if (!wx.cloud) {
@@ -73,10 +37,14 @@ App({
     // Do something when show.
   },
   onHide() {
+    console.log(getCurrentPages(),'getCurrentPages()')
     // Do something when hide.
   },
   onError(msg) {
     console.log(msg)
+  },
+  _click(){
+    console.log(getCurrentPages(),'getCurrentPages()')
   },
   globalData: 'I am global data'
 }

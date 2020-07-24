@@ -1,7 +1,6 @@
 //index.js
 const app = getApp()
 import reset from '../../tracks/reset';
-
 Page = reset(Page,'pages/list/list')
 
 Page({
@@ -160,10 +159,13 @@ Page({
   },
   cateClick(e) {
     console.log(e,'e')
+    app.xbossdebug.error('cateClick，请求出错啦')
     this.setData({
       scrollXActive: e.currentTarget.dataset.index,
       scrollItem: this.data.scrollXList[e.currentTarget.dataset.index]
     })
   },
-
+  _submit(){
+    app.xbossdebug.error('_submit，请求出错啦')
+  }
 })

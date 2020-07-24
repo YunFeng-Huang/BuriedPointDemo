@@ -173,5 +173,18 @@ Page({
     })
   },
   _appointment(){
+    console.log(getCurrentPages(),'getCurrentPages()')
+    console.log(app.data.history_router)
+    // wx.cloud.callFunction({
+    //   name: 'getVisitPage',
+    //   data: {},
+    //   success: res => {
+    //     console.error('[云函数] [getVisitPage] success', res)
+    //   },
+    //   fail: err => {
+    //     console.error('[云函数] [getVisitPage] 调用失败', err)
+    //   }
+    // })
+    
   }
 })

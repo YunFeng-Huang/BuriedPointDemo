@@ -5,7 +5,10 @@ const tracks = {
     },
     onShow(){
       console.log('onShow','app')
-    }
+      let pages = getCurrentPages()
+      console.log(pages,'onShowpages')
+    },
+  
   }
 };
 export default tracks;
