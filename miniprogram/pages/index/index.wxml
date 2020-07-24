@@ -1,5 +1,5 @@
 
-<view class="w-container">
+<view class="w-container" catchtap='elementTracker'>
   <swiper class='swiper-header' autoplay="true" indicator-dots="true" indicator-color="#999" indicator-active-color="#fff">
     <block wx:for="{{imgUrls}}">
       <swiper-item>

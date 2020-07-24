@@ -1,6 +1,8 @@
 //index.js
 const app = getApp()
-// var Food = require('../../template/food/food.js');
+import reset from '../../tracks/reset';
+
+Page = reset(Page,'pages/list/list')
 
 Page({
   data: {
@@ -157,6 +159,7 @@ Page({
     })
   },
   cateClick(e) {
+    console.log(e,'e')
     this.setData({
       scrollXActive: e.currentTarget.dataset.index,
       scrollItem: this.data.scrollXList[e.currentTarget.dataset.index]
